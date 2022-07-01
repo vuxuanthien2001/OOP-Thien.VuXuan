@@ -14,7 +14,7 @@ public class DatabaseDemo {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         initDatabase();
-        /*updateTableTest2();
+        /*updateTableByIdTest();
         printTableTest();*/
         /*insertTableTest();
         printTableTest();*/
@@ -51,9 +51,9 @@ public class DatabaseDemo {
     }
     //- selectTableTest()
     public static void selectTableTest(){
-        System.out.println("Nhập name cần tìm: ");
-        String nameFind = scanner.nextLine();
-        ArrayList<Product> list = database.selectTable("Entity.Product",nameFind);
+       /* System.out.println("Nhập name cần tìm: ");
+        String nameFind = scanner.nextLine();*/
+        ArrayList<Product> list = database.selectTable("Entity.Product","nameFind");
         System.out.println("Danh sách sản phẩm có tên trên:");
         for (Product product: list
              ) {
@@ -116,7 +116,7 @@ public class DatabaseDemo {
     }
 
     // 7.2 Trong class DatabaseDemo, update function updateTableTest để test function mới viết"
-    public static void updateTableTest2(){
+    public static void updateTableByIdTest(){
         System.out.println("Nhập id cần update: ");
         int iid = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập name: ");

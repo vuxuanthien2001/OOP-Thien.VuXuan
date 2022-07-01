@@ -2,6 +2,7 @@ package DAO;
 
 import Entity.Accessory;
 import Entity.Category;
+import Entity.IEnity;
 import Entity.Product;
 
 
@@ -35,7 +36,7 @@ public class Database {
     }
 
     //2. Hàm  selectTable(name, where) trả ra toàn bộ màng theo tên truyền vào
-    public ArrayList selectTable(String name, String where) {
+    /*public ArrayList selectTable(String name, String where) {
         ArrayList list = new ArrayList();
         if (name.equals("Entity.Product")) {
             for (Product product : productTable
@@ -64,7 +65,20 @@ public class Database {
         }
 
         return list;
+    }*/
+    public ArrayList selectTable(String name, String where) {
+        if (name.equalsIgnoreCase("Entity.Product")) {
+            return productTable;
+        }
+        if (name.equalsIgnoreCase("Entity.Category")) {
+            return categoryTable;
+        }
+        if (name.equalsIgnoreCase("Entity.Accessory")) {
+            return accessoryTable;
+        }
+        return null;
     }
+
 
     //3. Hàm  updateTable(name,row): tìm row có id trong mảng, update theo row truyền vào
     public int updateTable(String name, Object row) {

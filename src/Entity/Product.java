@@ -1,36 +1,21 @@
 package Entity;
 
-public class Product {
-    private int id;
-    private String name;
+public class Product extends BaseRow{
     private double price;
     private double quality;
     private int categoryId;
 
-    public Product(){}
-
-    public Product(int id, String name, double price, double quality, int categoryId) {
-        this.id = id;
-        this.name = name;
+    public Product(double price, double quality, int categoryId) {
         this.price = price;
         this.quality = quality;
         this.categoryId = categoryId;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Product(int id, String name, double price, double quality, int categoryId) {
+        super(id, name);
+        this.price = price;
+        this.quality = quality;
+        this.categoryId = categoryId;
     }
 
     public double getPrice() {

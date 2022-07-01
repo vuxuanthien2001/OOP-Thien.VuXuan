@@ -40,16 +40,6 @@ public class CategoryDAO {
     }
 
     public int update(Category category){
-        System.out.println("Nhập id: ");
-        int iid = Integer.parseInt(scanner.nextLine());
-        System.out.println("Nhập name: ");
-        String strname = scanner.nextLine();
-        System.out.println("Nhập price: ");
-        double dprice = Double.parseDouble(scanner.nextLine());
-        System.out.println("Nhập quality: ");
-        double dquality = Double.parseDouble(scanner.nextLine());
-        System.out.println("Nhập categoryId: ");
-        int icategoryId = Integer.parseInt(scanner.nextLine());
         if(database.updateTable("Entity.Category", category) == 1){
             return 1;
         }
@@ -57,16 +47,6 @@ public class CategoryDAO {
     }
 
     public boolean delete(Category category){
-        System.out.println("Nhập id: ");
-        int iid = Integer.parseInt(scanner.nextLine());
-       /* System.out.println("Nhập name: ");
-        String strname = scanner.nextLine();
-        System.out.println("Nhập price: ");
-        double dprice = Double.parseDouble(scanner.nextLine());
-        System.out.println("Nhập quality: ");
-        double dquality = Double.parseDouble(scanner.nextLine());
-        System.out.println("Nhập categoryId: ");
-        int icategoryId = Integer.parseInt(scanner.nextLine());*/
         if(database.deleteTable("Entity.Category", category) == true){
             return true;
         }

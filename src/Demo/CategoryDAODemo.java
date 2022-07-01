@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class CategoryDAODemo extends Database {
     Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-
+        CategoryDAODemo demo = new CategoryDAODemo();
     }
 
     public void insertTest(){

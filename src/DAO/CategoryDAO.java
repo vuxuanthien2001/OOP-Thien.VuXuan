@@ -50,7 +50,7 @@ public class CategoryDAO {
         double dquality = Double.parseDouble(scanner.nextLine());
         System.out.println("Nhập categoryId: ");
         int icategoryId = Integer.parseInt(scanner.nextLine());
-        if(database.updateTable("Entity.Category", new Product(iid,strname,dprice,dquality,icategoryId)) == 1){
+        if(database.updateTable("Entity.Category", category) == 1){
             return 1;
         }
         return 0;
@@ -67,7 +67,7 @@ public class CategoryDAO {
         double dquality = Double.parseDouble(scanner.nextLine());
         System.out.println("Nhập categoryId: ");
         int icategoryId = Integer.parseInt(scanner.nextLine());*/
-        if(database.deleteTable("Entity.Category", new Product(iid,"",0,0,0)) == true){
+        if(database.deleteTable("Entity.Category", category) == true){
             return true;
         }
         return false;

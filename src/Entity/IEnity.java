@@ -2,25 +2,29 @@ package Entity;
 
 public interface IEnity {
     /**
-     * get Id
+     * get Id of IEnity
+     *
      * @return
      */
     public int getId();
 
     /**
-     * set id
+     * set id of IEnity
+     *
      * @param id
      */
     public void setId(int id);
 
     /**
-     * get name
+     * get name of IEnity
+     *
      * @return
      */
     public String getName();
 
     /**
-     * set name
+     * set name of IEnity
+     *
      * @param name
      */
     public void setName(String name);

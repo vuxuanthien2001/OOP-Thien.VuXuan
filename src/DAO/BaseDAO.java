@@ -1,17 +1,20 @@
 package DAO;
 
+import Entity.BaseRow;
+
 import java.util.ArrayList;
 
 public abstract class BaseDAO {
-    Database database = new Database();
+    Database database = Database.getDataBase();
 
     /**
-     * insert
+     * insert row of BaseDao
+     *
      * @param row
-     * @return
+     * @return 1 if successful, 0 if failure
      */
-    public int insert(BaseDAO row) {
-        if(row != null){
+    public int insert(BaseRow row) {
+        if (row != null) {
             database.insertTable(row.getClass().getName(), row);
             return 1;
         }
@@ -19,26 +22,28 @@ public abstract class BaseDAO {
     }
 
     /**
-     * update
+     * update row of BaseDAO
+     *
      * @param row
-     * @return
+     * @return 1 if successful, 0 if failure
      */
-    public int update(BaseDAO row){
-        if(row != null){
+    public int update(BaseRow row) {
+        if (row != null) {
             database.updateTable(row.getClass().getName(), row);
             return 1;
         }
-       return 0;
+        return 0;
     }
 
 
     /**
-     * delete
+     * delete row of BaseDAO
+     *
      * @param row
-     * @return
+     * @return true if successful, false if failure
      */
-    public boolean delete(BaseDAO row){
-        if(row != null){
+    public boolean delete(BaseRow row) {
+        if (row != null) {
             database.deleteTable(row.getClass().getName(), row);
             return true;
         }
@@ -46,13 +51,13 @@ public abstract class BaseDAO {
     }
 
     /**
-     * Find all
+     * Find all by name of BaseDAO
+     *
      * @param name
      * @return
      */
-
-    public ArrayList<BaseDAO> findAll(String name){
-        return database.selectTable(name,"");
+    public ArrayList<BaseRow> findAll(String name) {
+        return database.selectTable(name, "");
     }
 
 }

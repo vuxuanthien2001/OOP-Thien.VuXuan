@@ -7,73 +7,74 @@ import java.util.Scanner;
 
 public class ProductDemo {
     static Scanner sc = new Scanner(System.in);
+
     //static ArrayList<Product> listProduct = new ArrayList<Product>();
-    public Product createProductTest(){
-        Product product = new Product(addId(),addName(),addPrice(),addQuality(),addCategoryId());
+    public Product createProductTest() {
+        Product product = new Product(addId(), addName(), addPrice(), addQuality(), addCategoryId());
         return product;
     }
 
-    public int addId(){
+    public int addId() {
         int id;
         System.out.print("Nhập id: ");
-        do{
+        do {
             id = Integer.parseInt(sc.nextLine());
-            if(id < 0){
+            if (id < 0) {
                 System.out.print("Nhập lại id: ");
             }
-        }while (id < 0);
+        } while (id < 0);
         return id;
     }
 
-    public String addName(){
+    public String addName() {
         String name;
         System.out.print("Nhập name: ");
-        do{
+        do {
             name = sc.nextLine();
-            if(name.equals("")){
+            if (name.equals("")) {
                 System.out.print("Nhập lại name: ");
             }
-        }while (name.equals(""));
+        } while (name.equals(""));
         return name;
     }
 
-    public double addPrice(){
+    public double addPrice() {
         double price;
         System.out.print("Nhập price: ");
-        do{
+        do {
             price = Double.parseDouble(sc.nextLine());
-            if(price < 0){
+            if (price < 0) {
                 System.out.print("Nhập lại price: ");
             }
-        }while (price < 0);
+        } while (price < 0);
         return price;
     }
 
-    public double addQuality(){
+    public double addQuality() {
         double quality;
         System.out.print("Nhập quality: ");
-        do{
+        do {
             quality = Double.parseDouble(sc.nextLine());
-            if(quality < 0){
+            if (quality < 0) {
                 System.out.print("Nhập lại quality: ");
             }
-        }while (quality < 0);
+        } while (quality < 0);
         return quality;
     }
 
-    public int addCategoryId(){
+    public int addCategoryId() {
         int categoryId;
         System.out.print("Nhập categoryId: ");
-        do{
+        do {
             categoryId = Integer.parseInt(sc.nextLine());
-            if(categoryId < 0){
+            if (categoryId < 0) {
                 System.out.print("Nhập lại categoryId: ");
             }
-        }while (categoryId < 0);
+        } while (categoryId < 0);
         return categoryId;
     }
 
-    public void printProduct(Product product){
+    public void printProduct(Product product) {
         System.out.println("Thông tin sản phẩm:");
         System.out.println("Id: " + product.getId());
         System.out.println("Name: " + product.getName());

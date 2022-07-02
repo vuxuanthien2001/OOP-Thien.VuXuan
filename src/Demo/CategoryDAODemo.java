@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class CategoryDAODemo extends Database {
     Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         CategoryDAODemo demo = new CategoryDAODemo();
         demo.insertTest();
@@ -21,21 +22,21 @@ public class CategoryDAODemo extends Database {
     /**
      * insert category
      */
-    public void insertTest(){
+    public void insertTest() {
         System.out.println("Nhập id: ");
         int iid = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập name: ");
         String strname = scanner.nextLine();
-        super.insertTable("Entity.Category",new Category(iid, strname));
+        super.insertTable("Entity.Category", new Category(iid, strname));
     }
 
     /**
      * show all category
      */
-    public void findAllTest(){
-        for (Category category: super.categoryTable
-             ) {
-            System.out.println(category.getId()+ "\t" + category.getName());
+    public void findAllTest() {
+        for (Category category : super.categoryTable
+        ) {
+            System.out.println(category.getId() + "\t" + category.getName());
         }
     }
 
@@ -43,23 +44,23 @@ public class CategoryDAODemo extends Database {
      * update category
      */
 
-    public void updateTest(){
+    public void updateTest() {
         System.out.println("Nhập id: ");
         int iid = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập name: ");
         String strname = scanner.nextLine();
-        super.updateTable("Entity.Category",new Category(iid, strname));
+        super.updateTable("Entity.Category", new Category(iid, strname));
     }
 
     /**
      * delete category
      */
-    public void deleteTest(){
+    public void deleteTest() {
         System.out.println("Nhập id: ");
         int iid = Integer.parseInt(scanner.nextLine());
         /*System.out.println("Nhập name: ");
         String strname = scanner.nextLine();*/
-        super.deleteTable("Entity.Category", new Category(iid,""));
+        super.deleteTable("Entity.Category", new Category(iid, ""));
     }
 
 }

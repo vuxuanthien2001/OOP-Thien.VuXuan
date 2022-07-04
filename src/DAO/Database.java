@@ -8,15 +8,15 @@ import java.util.Scanner;
 
 public class Database {
 
-    public ArrayList<Product> productTable = new ArrayList<>();
-    public ArrayList<Category> categoryTable = new ArrayList<>();
-    public ArrayList<Accessory> accessoryTable = new ArrayList<>();
+    protected ArrayList<Product> productTable = new ArrayList<>();
+    protected ArrayList<Category> categoryTable = new ArrayList<>();
+    protected ArrayList<Accessory> accessoryTable = new ArrayList<>();
 
     public static String NAME_PRODUCT = "Entity.Product";
     public static String NAME_CATEGORY = "Entity.Category";
     public static String NAME_ACCESSORY = "Entity.Accessory";
 
-    public static Database instance;
+    protected static Database instance;
 
 
     public static Database getDataBase(){
@@ -200,44 +200,6 @@ public class Database {
                     accessoryTable.set(i, (Accessory) row);
                 }
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        Database database = Database.getDataBase();
-        database.productTable.add(new Product(1, "CPU", 750, 10, 1));
-        database.productTable.add(new Product(2, "RAM", 50, 2, 2));
-        database.productTable.add(new Product(3, "HDD", 70, 1, 2));
-        database.productTable.add(new Product(4, "Main", 400, 3, 1));
-        database.productTable.add(new Product(5, "Keyboard", 30, 8, 4));
-        database.productTable.add(new Product(6, "Mouse", 25, 50, 4));
-        database.productTable.add(new Product(7, "VGA", 60, 35, 3));
-        database.productTable.add(new Product(8, "Monitor", 120, 28, 2));
-        database.productTable.add(new Product(9, "Case", 120, 28, 5));
-        for (Product product : database.productTable
-        ) {
-            System.out.println(product.getName());
-        }
-        if (database.insertTable("Entity.Product", new Product(10, "Hào", 130, 29, 5)) == 1) {
-            System.out.println("Thêm thành công");
-        }
-        //database.insertTable("Entity.Product",new Product(10,"Hào",130,29,5));
-      /*  for (Product product : database.productTable
-        ) {
-            System.out.println(product.getName());
-        }*/
-        /*ArrayList<Product> list = database.selectTable("Entity.Product", "HDD");
-        System.out.println(list.get(0).getId());*/
-
-        //database.updateTable("Entity.Product", new Product(8,"Hào",4,5,6));
-
-        database.deleteTable("Entity.Product", new Product(8, "Hào", 4, 5, 6));
-
-        //database.truncateTable("Entity.Product");
-
-        for (Product product : database.productTable
-        ) {
-            System.out.println(product.getName());
         }
     }
 }

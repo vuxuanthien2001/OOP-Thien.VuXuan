@@ -6,7 +6,7 @@ import Entity.Product;
 import java.util.ArrayList;
 
 public class AccessoryDAO extends BaseDAO {
-    static Database database = new Database();
+    static Database database = Database.getDataBase();
 
     /**
      * Find Accessory by id
